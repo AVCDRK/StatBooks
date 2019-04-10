@@ -85,7 +85,9 @@ for (i in 1:10000){
 ourecdf <- ecdf(recordTrials)
 ourecdf2 <- ecdf(recordTrials2)
 ourecdf((74-51)^2)
+quantile(recordTrials,.95)
 ourecdf2(abs(74-51))
+quantile(recordTrials2,.95)
 ```
 
 
@@ -93,4 +95,5 @@ ourecdf2(abs(74-51))
 
 <Summarise your results as to the effectiveness of the vaccine with explanations that could be understood by your mom>
 
-We set up to see if we would get results similiar to that of our clinical trial under the conditions assumed by the null hypothesis. After 10000 simulations results computed by our "oddness measure" there were more extreme results only about 3 percent of the time.  This leads us to tenatively reject the null hypothesis. Notice also that monitone increasing functions give the same results when they are the measures of "oddness"
+We set up to see if we would get results similiar to that of our clinical trial under the conditions assumed by the null hypothesis. After 10000 simulations results computed by our "oddness measure" there were more extreme results only about 3 percent of the time.  This leads us to tenatively reject the null hypothesis. Notice also that monitone increasing functions give the same results when they are the measures of "oddness". The emperical cumulative distribution function is similiar to the p-variant we have already seen. Just like pnorm(x) will give the probablility of getting something less than x from a standard normal distribution so does ourecdf(x) give the probability that our newly created distribution is less than what ever value of x we plug in. The other function qnorm(p) is handled with the quantiles function in combination with the data that generates our emperical distribution.
+See the examples using recordTrials and recordtrials2 above.
